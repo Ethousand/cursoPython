@@ -35,3 +35,8 @@ numbers.pop() #elimina el ultimo elemento
 del numbers[0] #elimina el elemento en la posicion indicada
 
 print(numbers)
+
+num = [1, 20, -15, 300, 50, 0, 17.5]
+
+print('el numero mayor es: ', max(num))
+print('el numero menor es: ', min(num))
