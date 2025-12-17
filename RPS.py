@@ -7,7 +7,7 @@ Computer = random.choice(['R', 'P', 'S'])
 RPS = {'R': 'Rock', 'P': 'Paper', 'S': 'Scissors'}
 
 # Validate player input
-while Player not in ['R', 'P', 'S']:
+while not Player == 'R' and not Player == 'P' and not Player == 'S':
     Player = input('Invalid input! Please enter R for rock, P for paper, S for scissors: ').upper()
 
 # Im gonna use logic staments for to simplify the logic of the game
