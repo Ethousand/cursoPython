@@ -12,5 +12,15 @@ print('tambien podemos extraer datos de una tupla, como por ejemplo el cuarto el
 
 tupla[0] = 10  # Esto generará un error porque las tuplas son inmutables
 
-#practica de diccionasrios
+#practica de diccionarios
+familia = {'Emil': {'apellido': 'Colina',
+                    'edad': 28,
+                    'altura':1.70},
+                    
+           'Edward': {'apellido': 'Colina',
+                      'edad': 25,
+                      'altura':1.75},
 
+            'Oneida': {'apellido': 'Barrios',
+                      'edad': 55,
+                      'altura':1.60}}
