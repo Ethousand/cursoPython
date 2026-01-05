@@ -24,4 +24,3 @@ if isMember:
 else:
     print('no eres miembro, no tienes acceso')
 
-# inicio de bucles
