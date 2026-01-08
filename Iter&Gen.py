@@ -1,0 +1,1 @@
+# iterador&generador
