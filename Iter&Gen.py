@@ -26,3 +26,16 @@ def my_generator():
 
 for num in my_generator():
     print(num)
+
+# ejemplo de fibonacci con generador
+
+limit = int(input('Ingrese el límite para la secuencia de Fibonacci: '))
+
+def fibonacci_gen(n):
+    a, b = 0, 1
+    while a < n:
+        yield a
+        a, b = b, a + b
+
+for number in fibonacci_gen(limit):
+    print(number)
