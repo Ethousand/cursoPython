@@ -17,7 +17,7 @@ for letter in speller:
 
 # generador con función
 
-print ("Generador con función:")
+print ("función generadora:")
 
 def my_generator():
     yield 1
@@ -33,7 +33,7 @@ limit = int(input('Ingrese el límite para la secuencia de Fibonacci: '))
 
 def fibonacci_gen(n):
     a, b = 0, 1
-    while a < n:
+    while a <= n:
         yield a
         a, b = b, a + b
 
