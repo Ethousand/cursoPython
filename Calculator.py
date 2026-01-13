@@ -1,0 +1,2 @@
+# Ejemplo de función básica
+
