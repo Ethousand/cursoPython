@@ -1,7 +1,9 @@
 # Ejemplo de función básica
 
-def greet():
-    print("Hello, World!")
+def greet(name, last_name=""):
+    print(f"Hello {name} {last_name}, welcome to python")
     
 
-greet()
+greet("Emil", "Colina")
+
+greet("Ana")
