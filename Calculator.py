@@ -22,9 +22,11 @@ def divide(a, b):
     return a / b
 def exponential(a, b):
     return a ** b
-def sqrt(a):
+def sqrt(a, b= 0.5):
     if a < 0:
         return "Error: Cannot compute square root of a negative number."
-    return a ** 0.5
+    return a ** b
 
-option = input("Selcciones una opción (1.- suma, 2.- resta, 3.- multiplicar, 4.- dividir, 5.- exponential, 6.- sqrt 7.- salir): ")
+
+
+option = input("Selcciones una opción (1.- suma, 2.- resta, 3.- multiplicar, 4.- dividir, 5.- exponencial, 6.- raiz, 7.- salir): ")
