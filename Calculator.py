@@ -27,6 +27,8 @@ def sqrt(a, b= 0.5):
         return "Error: Cannot compute square root of a negative number."
     return a ** b
 
+
+
 def calculator():
     while True:
         option = input("Selcciones una opción (1.- suma \n 2.- resta \n 3.- multiplicar \n 4.- dividir \n 5.- exponencial \n 6.- raiz \n 7.- salir): ")
@@ -34,7 +36,31 @@ def calculator():
             print("Saliendo de la calculadora.")
             break
         elif option in ["1", "2", "3", "4", "5", "6"]:
-            
+            option = int(option)
+            a = float(input("Ingrese el primer número: "))
+            b = float(input("Ingrese el segundo número: "))
 
-
+            if option == 1:
+                result = add(a, b) 
+                operation = "suma"
+            elif option == 2:
+                result = subtract(a, b)
+                operation = "resta"
+            elif option == 3:
+                result = multiply(a, b)
+                operation = "multiplicación"
+            elif option == 4:
+                result = divide(a, b)
+                operation = "división"
+            elif option == 5:
+                result = exponential(a, b)
+                operation = "exponencial"
+            elif option == 6:
+                result = sqrt(a, b)
+                operation = "raíz"
+            print(f"El resultado de la {operation} es: {result}")
+ 
+        else:
+            print("Opción no válida. Intente de nuevo.")
+            continue
 
