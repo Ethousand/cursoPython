@@ -22,7 +22,7 @@ def divide(a, b):
     return a / b
 def exponential(a, b):
     return a ** b
-def sqrt(a, b= 0.5):
+def sqrt(a, b):
     if a < 0:
         return "Error: Cannot compute square root of a negative number."
     return a ** b
@@ -61,7 +61,7 @@ def calculator():
                 operation = "exponencial"
             
             elif option == 6:
-                result = sqrt(a, b=0.5)
+                result = sqrt(a, b)
                 operation = "raíz"
             print(f"El resultado de la {operation} es: {result}")
  
