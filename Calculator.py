@@ -10,24 +10,6 @@ greet("Ana")
 
 #calculator.py
 
-def add(a, b):
-    return a + b
-def subtract(a, b):
-    return a - b
-def multiply(a, b):
-    return a * b    
-def divide(a, b):
-    if b == 0: 
-        return "Error: Division by zero is not allowed."
-    return a / b
-def exponential(a, b):
-    return a ** b
-def sqrt(a, b):
-    if a < 0:
-        return "Error: Cannot compute square root of a negative number."
-    return a ** b
-
-
 
 def calculator():
     while True:
@@ -41,29 +23,35 @@ def calculator():
             b = float(input("Ingrese el segundo número: ")) if option != "6" else 0.5
 
             if option == 1:
-                result = add(a, b) 
+                add = lambda a, b: a + b
+                result = add(a, b)
                 operation = "suma"
 
             elif option == 2:
+                subtract = lambda a, b: a - b
                 result = subtract(a, b)
                 operation = "resta"
 
             elif option == 3:
+                multiply = lambda a, b: a * b
                 result = multiply(a, b)
                 operation = "multiplicación"
 
             elif option == 4:
+                divide = lambda a, b: "Error: Division by zero is not allowed." if b == 0 else a / b
                 result = divide(a, b)
                 operation = "división"
             
             elif option == 5:
+                exponential = lambda a, b: a ** b
                 result = exponential(a, b)
                 operation = "exponencial"
             
             elif option == 6:
-                result = sqrt(a, b)
+                sqrt = lambda a, b: "Error: Cannot compute square root of a negative number." if a < 0 else a ** b
+                result = sqrt(a, 1/b)
                 operation = "raíz"
-            print(f"El resultado de la {operation} es: {result}")
+            print(f"\nEl resultado de la {operation} es: {result} \n")
  
         else:
             print("Opción no válida. Intente de nuevo.")
