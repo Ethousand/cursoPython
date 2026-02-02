@@ -1,5 +1,5 @@
 #Orientend Object Programming - POO
-'''
+
 class Person:
     def __init__(self, name, age):
         self.name = name
@@ -14,7 +14,6 @@ person2 = Person('Carli', 32)
 person1.greet()
 person2.greet()
 
-'''
 class BankAccount:
     def __init__(self, account_holder, balance):
         self.account_holder = account_holder
