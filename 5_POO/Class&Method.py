@@ -16,7 +16,7 @@ person2.greet()
 
 '''
 class BankAccount:
-    def __init (self, account_holder, balance):
+    def __init__(self, account_holder, balance):
         self.account_holder = account_holder
         self.balance = balance
         self.is_active = True
@@ -45,3 +45,14 @@ class BankAccount:
     def activate_account(self):
         self.is_active = True
         print(f'La cuenta de {self.account_holder} ha sido activada.')
+
+account1 = BankAccount('Juan Perez', 1000)
+account2 = BankAccount('Ana Gomez', 500)
+
+account1.deposit(200)
+account1.suspend_account()
+account1.deposit(50)
+account1.activate_account()
+account1.withdraw(300)
+
+account2.withdraw(100)
