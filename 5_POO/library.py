@@ -19,3 +19,25 @@ class Book:
         self.available = True
         print(f"El usuario {user} ha devuelto el libro {book.title}")
 
+
+class User:
+    def __init__(self, name, user_id):
+        self.name = name
+        self.user_id = user_id
+        self.borrowed_books = []
+    
+    def borrow_book(self, book):
+        if book.available:
+            book.borrow(self.name, book.title)
+            self.borrowed_books.append(book)
+            print(f"{self.name} ha tomado prestado el libro '{book.title}'")
+        else:
+            print(f"El libro '{book.title}' no está disponible")
+    
+    def return_book(self, book):
+        if book in self.borrowed_books:
+            book.return_book(self.name, book.title)
+            self.borrowed_books.remove(book)
+            print(f"{self.name} ha devuelto el libro '{book.title}'")
+        else:
+            print(f"{self.name} no tiene el libro '{book.title}' para devolver")
