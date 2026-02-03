@@ -41,3 +41,11 @@ class User:
             print(f"{self.name} ha devuelto el libro '{book.title}'")
         else:
             print(f"{self.name} no tiene el libro '{book.title}' para devolver")
+
+book1 = Book("Cien Años de Soledad", "Gabriel García Márquez")
+book2 = Book("Don Quijote de la Mancha", "Miguel de Cervantes")
+
+user1 = User("Luis", '001')
+
+user1.borrow_book(book1)
+user1.return_book(book1)
