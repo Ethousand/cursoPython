@@ -8,16 +8,13 @@ class Book:
         self.author = author
         self.available = True
 
-    def borrow(self, user, book):
+    def borrow(self, user, ):
         if self.available:
             self.available = False
-            print(f"El usuario {user} ha tomado prestado el libro {book.title}")
-        else:
-            print(f"El libro '{book.title}' no está disponible")
 
     def return_book(self, user, book):
         self.available = True
-        print(f"El usuario {user} ha devuelto el libro {book.title}")
+
 
 
 class User:
@@ -28,7 +25,7 @@ class User:
     
     def borrow_book(self, book):
         if book.available:
-            book.borrow(self.name, book.title)
+            book.borrow(self.name)
             self.borrowed_books.append(book)
             print(f"{self.name} ha tomado prestado el libro '{book.title}'")
         else:
