@@ -72,3 +72,13 @@ hertz.add_user(user1)
 
 # mostrar coches disponibles
 hertz.show_available_cars()
+print('\n')
+
+user1.rent_car(car1)
+user1.rent_car(car1)
+
+hertz.show_available_cars()
+print('\n')
+user1.return_car(car1)
+print('\n')
+hertz.show_available_cars()
