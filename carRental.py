@@ -37,7 +37,7 @@ class User:
             print(f"{self.name} ha devuelto el coche {car.brand} {car.model}")
         else:
             print(f"{self.name} no tiene el coche {car.brand} {car.model} para devolver")
-            
+
 class CarRentalStore:
     def __init__(self):
         self.cars = []
@@ -54,3 +54,21 @@ class CarRentalStore:
         for car in self.cars:
             if car.available:
                 print(f"- {car.brand} {car.model} ({car.year})")
+
+# aplicación de las clases
+
+# creación de coches y usuarios
+car1 = Car("Toyota", "Corolla", 2020)
+car2 = Car("Honda", "Civic", 2019)
+car3 = Car("Mitsubishi", "Lancer", 2021)
+user1 = User("Ana", 'A001')
+
+# creación de la tienda de alquiler
+hertz = CarRentalStore()
+hertz.add_car(car1)
+hertz.add_car(car2)
+hertz.add_car(car3)
+hertz.add_user(user1)
+
+# mostrar coches disponibles
+hertz.show_available_cars()
