@@ -37,3 +37,20 @@ class User:
             print(f"{self.name} ha devuelto el coche {car.brand} {car.model}")
         else:
             print(f"{self.name} no tiene el coche {car.brand} {car.model} para devolver")
+            
+class CarRentalStore:
+    def __init__(self):
+        self.cars = []
+        self.users = []
+
+    def add_car(self, car):
+        self.cars.append(car)
+
+    def add_user(self, user):
+        self.users.append(user)
+
+    def show_available_cars(self):
+        print("Coches disponibles para alquilar:")
+        for car in self.cars:
+            if car.available:
+                print(f"- {car.brand} {car.model} ({car.year})")
