@@ -81,8 +81,6 @@ PopularGreek.add_user(user1)
 #mostrar libros disponibles
 PopularGreek.show_available_books()
 
-'''
 user1.borrow_book(book1)
 user1.borrow_book(book1)
 user1.return_book(book1)
-'''
