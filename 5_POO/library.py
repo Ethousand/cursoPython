@@ -41,11 +41,33 @@ class User:
         else:
             print(f"{self.name} no tiene el libro '{book.title}' para devolver")
 
+class Library:
+    def __init__(self):
+        self.books = []
+        self.users = []
+
+    def add_book(self, book):
+        self.books.append(book)
+
+    def add_user(self, user):
+        self.users.append(user)
+
+    def show_available_books(self):
+        print("Libros disponibles en la biblioteca:")
+        for book in self.books:
+            if book.available:
+                print(f"- {book.title} por {book.author}")
+    
+#aplicación de las clases
+
+#creación de libros y usuarios
 book1 = Book("Cien Años de Soledad", "Gabriel García Márquez")
 book2 = Book("Don Quijote de la Mancha", "Miguel de Cervantes")
 
 user1 = User("Luis", '001')
 
+'''
 user1.borrow_book(book1)
 user1.borrow_book(book1)
 user1.return_book(book1)
+'''
