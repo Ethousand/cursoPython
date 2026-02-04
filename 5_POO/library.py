@@ -63,8 +63,23 @@ class Library:
 #creación de libros y usuarios
 book1 = Book("Cien Años de Soledad", "Gabriel García Márquez")
 book2 = Book("Don Quijote de la Mancha", "Miguel de Cervantes")
+book3 = Book("La Iliada", "Homero")
+book4 = Book("1984", "George Orwell")
 
 user1 = User("Luis", '001')
+
+#creación de la biblioteca y adición de libros y usuarios
+PopularGreek = Library()
+
+PopularGreek.add_book(book1)
+PopularGreek.add_book(book2)
+PopularGreek.add_book(book3)
+PopularGreek.add_book(book4)
+
+PopularGreek.add_user(user1)
+
+#mostrar libros disponibles
+PopularGreek.show_available_books()
 
 '''
 user1.borrow_book(book1)
