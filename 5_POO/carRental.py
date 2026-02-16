@@ -3,15 +3,17 @@
 # clases principales: Car, Person, Store
 
 class Car:
-    def __init__(self, brand, model, year):
+    def __init__(self, brand, model, year, Price):
         self.brand = brand
         self.model = model
         self.year = year
+        self.price = Price
         self.available = True
 
     def rent(self):
         if self.available:
             self.available = False
+    
 
     def return_car(self):
         self.available = True
@@ -50,17 +52,17 @@ class CarRentalStore:
         self.users.append(user)
 
     def show_available_cars(self):
-        print("Coches disponibles para alquilar:")
+        print("Coches disponibles para alquilar o comprar:")
         for car in self.cars:
             if car.available:
-                print(f"- {car.brand} {car.model} ({car.year})")
+                print(f"- {car.brand} {car.model} ({car.year}) - ${car.price/20}/week)")
 
 # aplicación de las clases
 
 # creación de coches y usuarios
-car1 = Car("Toyota", "Corolla", 2020)
-car2 = Car("Honda", "Civic", 2019)
-car3 = Car("Mitsubishi", "Lancer", 2021)
+car1 = Car("Toyota", "Corolla", 2020, 20000)
+car2 = Car("Honda", "Civic", 2019, 18000)
+car3 = Car("Mitsubishi", "Lancer", 2021, 22000)
 user1 = User("Ana", 'A001')
 
 # creación de la tienda de alquiler
