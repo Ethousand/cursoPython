@@ -55,3 +55,39 @@ class Bike(Vehicle):
             return f"La bicicleta {self.brand} {self.model} se ha detenido"
         else:
             return f"La bicicleta {self.brand} {self.model} no está disponible"
+
+class Truck(Vehicle):
+
+    def start_engine(self):
+        if self.available:
+            print(f"El motor del camión {self.brand} {self.model} ha arrancado")
+        else:
+            print(f"El camión {self.brand} {self.model} no está disponible")
+
+    def stop_engine(self):
+        if self.available:
+            print(f"El motor del camión {self.brand} {self.model} se ha detenido")
+        else:
+            print(f"El camión {self.brand} {self.model} no está disponible")
+
+class Costumer:
+    def __init__(self, name, customer_id):
+        self.name = name
+        self.customer_id = customer_id
+        self.purchased_vehicles = []
+
+    def inquiring_vehicle(self, vehicle: Vehicle):
+        if vehicle.check_availability():
+            avaliability = "disponible"
+        else:
+            avaliability = "no disponible"
+            
+        print(f"El vehículo {vehicle.brand} {vehicle.model} está {avaliability} para la venta. Precio: ${vehicle.get_price()}")
+    
+    def buy_vehicle(self, vehicle: Vehicle):
+        if vehicle.check_availability():
+            vehicle.sell()
+            self.purchased_vehicles.append(vehicle)
+            print(f"{self.name} ha comprado el {vehicle.brand} {vehicle.model}")
+        else:
+            print(f"El {vehicle.brand} {vehicle.model} no está disponible para la venta")
