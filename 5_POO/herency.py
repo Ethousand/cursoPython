@@ -29,6 +29,7 @@ class Vehicle:
     def stop_engine(self):
         raise NotImplementedError("Este método debe ser implementado por las subclases")
 
+#clases hijos para la super clase Vehicle, cada una con su propia implementación de los métodos para arrancar y detener el motor
 class Car(Vehicle):
     def start_engine(self):
         if self.available:
@@ -70,6 +71,7 @@ class Truck(Vehicle):
         else:
             print(f"El camión {self.brand} {self.model} no está disponible")
 
+# clase para los clientes del concesionario
 class Costumer:
     def __init__(self, name, customer_id):
         self.name = name
@@ -81,7 +83,7 @@ class Costumer:
             avaliability = "disponible"
         else:
             avaliability = "no disponible"
-            
+
         print(f"El vehículo {vehicle.brand} {vehicle.model} está {avaliability} para la venta. Precio: ${vehicle.get_price()}")
     
     def buy_vehicle(self, vehicle: Vehicle):
@@ -91,3 +93,23 @@ class Costumer:
             print(f"{self.name} ha comprado el {vehicle.brand} {vehicle.model}")
         else:
             print(f"El {vehicle.brand} {vehicle.model} no está disponible para la venta")
+
+# clase para el concesionario
+class Dealership:
+    def __init__(self):
+        self.vehicles = []
+        self.customers = []
+
+    def add_vehicle(self, vehicle: Vehicle):
+        self.vehicles.append(vehicle)
+        print(f"Vehículo {vehicle.brand} {vehicle.model} agregado al inventario")
+
+    def add_customer(self, customer: Costumer):
+        self.customers.append(customer)
+        print(f"Cliente {customer.name} fue agregado")
+
+    def show_available_vehicles(self):
+        print("Vehículos disponibles en el concesionario:")
+        for vehicle in self.vehicles:
+            if vehicle.check_availability():
+                print(f"- {vehicle.brand} {vehicle.model} ({vehicle.year}) - ${vehicle.get_price()}")
