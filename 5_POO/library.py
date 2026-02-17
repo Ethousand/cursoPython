@@ -33,7 +33,7 @@ class User:
     
 
 
-    def return_book(self, book):
+    def return_book(self, book: Book):
         if book in self.borrowed_books:
             book.return_book()
             self.borrowed_books.remove(book)
