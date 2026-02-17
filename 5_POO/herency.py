@@ -3,10 +3,11 @@
 # el consesionario se expandira para ofrecer tanto autos como bicicletas y camiones 
 
 class Vehicle:
-    def __init__(self, brand, model, year):
+    def __init__(self, brand, model, year, price):
         self.brand = brand
         self.model = model
         self.year = year
+        self.price = price
         self.available = True
 
     def sell(self):
@@ -28,3 +29,29 @@ class Vehicle:
     def stop_engine(self):
         raise NotImplementedError("Este método debe ser implementado por las subclases")
 
+class Car(Vehicle):
+    def start_engine(self):
+        if self.available:
+            print(f"El motor del coche {self.brand} {self.model} ha arrancado")
+        else:
+            print(f"El coche {self.brand} {self.model} no está disponible")
+
+    def stop_engine(self):
+        if self.available:
+            print(f"El motor del coche {self.brand} {self.model} se ha detenido")
+        else:
+            print(f"El coche {self.brand} {self.model} no está disponible")
+
+class Bike(Vehicle):
+
+    def start_engine(self):
+        if self.available:
+            print(f"La bicicleta {self.brand} {self.model} esta en marcha")
+        else:
+            return f"La bicicleta {self.brand} {self.model} no está disponible"
+
+    def stop_engine(self):
+        if self.available:
+            return f"La bicicleta {self.brand} {self.model} se ha detenido"
+        else:
+            return f"La bicicleta {self.brand} {self.model} no está disponible"
