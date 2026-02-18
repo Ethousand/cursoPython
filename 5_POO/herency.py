@@ -12,10 +12,10 @@ class Vehicle:
 
     def sell(self):
         if self.available:
-            print(f"el vehiculo {self.brand} ha sido vendido")
+            print(f"El vehiculo {self.brand} ha sido vendido")
             self.available = False
         else:
-            print(f"el vehiculo {self.brand} no esta disponible para la venta")
+            print(f"El vehiculo {self.brand} no esta disponible para la venta")
 
     def check_availability(self):
         return self.available
@@ -113,3 +113,35 @@ class Dealership:
         for vehicle in self.vehicles:
             if vehicle.check_availability():
                 print(f"- {vehicle.brand} {vehicle.model} ({vehicle.year}) - ${vehicle.get_price()}")
+
+# aplicación de las clases
+# creación de vehículos
+car1 = Car("Toyota", "Corolla", 2020, 20000)
+bike1 = Bike("Trek", "X-Caliber", 2021, 15000)
+truck1 = Truck("Ford", "F-150", 2022, 35000)
+
+# creación de clientes
+customer1 = Costumer("Carlos", "C001")
+customer2 = Costumer("María", "C002")
+
+# creación del concesionario
+dealership = Dealership()
+
+# agregar vehículos y clientes al concesionario
+dealership.add_vehicle(car1)
+dealership.add_vehicle(bike1)
+dealership.add_vehicle(truck1)
+
+dealership.add_customer(customer1)
+dealership.add_customer(customer2)
+
+# mostrar vehículos disponibles
+dealership.show_available_vehicles()
+
+# consultar disponibilidad de un vehículo por parte de un cliente
+customer1.inquiring_vehicle(car1)
+car1.start_engine()
+car1.stop_engine()
+
+# comprar un vehículo
+customer1.buy_vehicle(car1)
