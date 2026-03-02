@@ -14,3 +14,6 @@ class Student(Person):
     def greet(self):
         super().greet()
         print(f"Y mi ID de estudiante es {self.student_id}.")
+
+Student1 = Student("Emil", 28, "S12345")
+Student1.greet()
