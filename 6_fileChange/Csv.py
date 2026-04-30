@@ -1,5 +1,14 @@
 import csv
-with open('Data.csv', 'r') as file:
-    reader = csv.reader(file)
-    for row in reader:
-        print(row)
+
+# Lectura regular en forma de diccionario
+'''
+with open('6_fileChange/Data.csv', 'r') as file:
+    csv_reader = csv.DictReader(file)
+    for row in csv_reader:
+         print(row)
+'''
+
+with open('6_fileChange/Data.csv', 'r') as file:
+    csv_reader = csv.DictReader(file)
+    for row in csv_reader:
+        print(f"Nombre: {row['nombre']}, Precio: {row['precio']}")
